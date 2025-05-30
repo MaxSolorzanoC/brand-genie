@@ -6,7 +6,15 @@ export const PublicRoutes = [
 export const ApiRoutes = [
     "/api/auth/login",
     "/api/auth/register",
-    "/api/stripe"
+    "/api/auth/logout",
+    "/api/stripe",
+    "/api/generate",
+    "/api/generate-logo",
+    "/api/regenerate",
+    "/api/subscription-info",
+    "/api/toggle-renewal",
+    "/api/projects",
+    "/api/user",
 ]
 
 export const AuthRoutes = [

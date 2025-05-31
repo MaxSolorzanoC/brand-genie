@@ -1,12 +1,11 @@
 "use client"
 
-import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 
-import { subscribeAction } from "@/actions/stripe";
 import { useGlobalStore } from "@/store/useGlobalStore";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTransition } from "react";
 
 const PricingPage = () => {
     const router = useRouter();
@@ -17,15 +16,21 @@ const PricingPage = () => {
     const handleSubscribe = async () => {
         if (user) {
             startTransition(async () =>{
-                const url = await subscribeAction({
-                    userId: user.id,
-                    customerId: user.customerId,
+                //Subscribe user
+                const res = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userId: user.id,
+                        customerId: user.customerId,
+                    }),
                 });
-                if (url) {
-                    router.push(url);
-                } else{
-                    console.error("Failed to create subscription session");
-                }
+
+                const {url} = await res.json();
+
+                router.push(url);
             })
         }
     }

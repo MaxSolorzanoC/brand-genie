@@ -49,7 +49,7 @@ const ProjectPage = () => {
         <>
             <Sidebar projectId={id as string} selected={"logo"} />
             <div className="ml-16 overflow-scroll min-h-screen w-screen">
-                <LogoEditor project={project} />
+                <LogoEditor project={project} setProject={setProject} />
             </div>
         </>
     );

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { CircleFadingPlus, FilePenLine, Image } from "lucide-react";
 
-import ComingSoonDialog from "@/components/coming-soon-dialog";
+import ComingSoonDialog from "@/components/dialogs/coming-soon-dialog";
 
 type Props = {
     selected: string, //Used to show which is the current section

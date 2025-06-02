@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
         cancel_url: `${process.env.NEXT_PUBLIC_URL}/subscription`,
         line_items: [
             {
-                price: "price_1RQDSsPLB7E2IKbkJ1AxuzW2",
+                price: "price_1RVKZTPLB7E2IKbk2pjXAQDB",
                 quantity: 1,
             },
         ],

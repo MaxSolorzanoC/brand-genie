@@ -23,7 +23,7 @@ export default async function RootLayout({
   const token = cookieStore.get('authToken')?.value;
   
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className='scroll-smooth'>
       <body className={inter.className}>
           {children}
           <SyncUser token={token} /> {/* Keep the client side user variable synced with the current signed in user (using the authToken) */}

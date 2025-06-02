@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 import { openai } from "@/lib/openai";
 import { supabase } from "@/lib/supabase";
 
+//TODO: Add previous logo (if exists) as input to compare and modify based on it
+
 //Generate a logo using open ai api
 export async function POST(req: Request) {
     const {prompt, id, description, name, slogan, logo} = await req.json();
@@ -60,6 +62,7 @@ export async function POST(req: Request) {
             ${prompt}
         `.trim(),
         n: 1,
+        quality: "standard",
         size: "1024x1024",
         
     });
@@ -83,15 +86,15 @@ export async function POST(req: Request) {
             }
             
             //Update project logo file path in database
-            const { error: projectError } = await supabase.from("projects").update({
+            const { data, error: projectError } = await supabase.from("projects").update({
                 logo: filePath
-            }).eq("id", id);
+            }).eq("id", id).select("*").single();
 
             if (projectError) {
                 return NextResponse.json({ error: projectError.message }, { status: 500 });
             }
             //Return the url of the logo
-            return NextResponse.json({ url: filePath });
+            return NextResponse.json({ data });
         }
         return NextResponse.json({ message: "Image URL not found", status: 404 })
    }

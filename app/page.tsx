@@ -27,9 +27,6 @@ export default function Home() {
           <Link href="#how-it-works" className="text-primary hover:text-primary transition-colors">
             How It Works
           </Link>
-          <Link href="#pricing" className="text-primary hover:text-primary transition-colors">
-            Pricing
-          </Link>
         </nav>
         <div className="flex items-center gap-2 ">
           {
@@ -123,67 +120,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="pricing" className="py-20 px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-primary">Simple, Transparent Pricing</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="hover:scale-105 transition-transform duration-300 ease-in-out hover:cursor-pointer">
-                <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-2">Free</h3>
-                <p className="text-3xl font-bold mb-4">$0</p>
-                <ul className="space-y-2 mb-6">
-                    <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>Unlimited text generation
-                    </li>
-                    <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>Up to 3 projects
-                    </li>
-                </ul>
-                <Button onClick={() => router.push('/dashboard')} className="w-full">
-                    Get Started 
-                </Button>
-                </CardContent>
-            </Card>
-            <Card  className="hover:scale-105 transition-transform duration-300 ease-in-out hover:cursor-pointer">
-                <div className="transform -translate-y-1/2 bg-primary text-secondary px-4 py-1 rounded-full text-sm font-medium w-1/2 mx-auto text-center">
-                Most Popular
-                </div>
-                <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-2">Pro</h3>
-                <p className="text-3xl font-bold mb-4">$15 ($0 LTO)</p>
-                <ul className="space-y-2 mb-6">
-                    <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span> Unlimited projects
-                    </li>
-                    <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span> Unlimited logo generation
-                    </li>
-                </ul>
-                <Button onClick={() => router.push('/dashboard')} className="w-full">
-                    Try it for free!
-                </Button>
-                </CardContent>
-            </Card>
-            <Card  className="hover:scale-105 transition-transform duration-300 ease-in-out hover:cursor-pointer">
-                <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-2">Business</h3>
-                <p className="text-3xl font-bold mb-4">$30</p>
-                <ul className="space-y-2 mb-6">
-                    <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span> Unlimited posts generation
-                    </li>
-                    <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span> Export your projects
-                    </li>
-                </ul>
-                <Button className="w-full">
-                    Coming Soon
-                </Button>
-                </CardContent>
-            </Card>
-            </div>
-        </section>
-
-        <section className="bg-secondary text-primary py-16">
+        <section className="text-primary py-16">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Brand?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
